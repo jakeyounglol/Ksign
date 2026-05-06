@@ -35,16 +35,10 @@ struct SettingsView: View {
     var body: some View {
 		NBNavigationView(.localized("Settings")) {
 			Form {
-//				#if !NIGHTLY && !DEBUG
-				SettingsDonationCellView(site: _donationsUrl)
-//				#endif
-				
+                
 				_feedback()
 				
 				Section {
-                    NavigationLink(destination: AppIconView()) {
-                        Label(.localized("App Icon"), systemImage: "app.badge")
-                    }
 					NavigationLink(destination: AppearanceView()) {
                         Label(.localized("Appearance"), systemImage: "paintbrush")
                     }
